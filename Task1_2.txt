@@ -54,7 +54,6 @@ let person2 = new Person("Bob", 30);
 The Object.create() method allows you to create a new object with a specified prototype object. It takes an object as an argument and returns a new object that inherits from the provided object.
 
 javascript
-Copy code
 let animal = {
   type: "Mammal",
   sound: function() {
@@ -71,7 +70,7 @@ dog.sound(); // "Animal sound"
 Factory functions are functions that return objects. They encapsulate the process of creating objects and allow for more flexible object creation logic.
 
 javascript
-Copy code
+
 function createPerson(name, age) {
   return {
     name: name,
