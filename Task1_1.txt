@@ -1,0 +1,24 @@
+Write a blog on Difference between HTTP1.1 vs HTTP2
+
+HTTP stands for hypertext transfer protocol & it is used in client-server communication. By using HTTP user sends the request to the server & the server sends the response to the user.
+
+
+HTTP/2 introduces multiplexing, allowing multiple requests and responses to be sent and received in parallel over a single TCP connection, whereas HTTP/1.1 requires separate connections for each request/response cycle.
+In HTTP/2, header compression is employed to reduce overhead by compressing HTTP headers before transmission, while HTTP/1.1 sends headers as plaintext with each request/response, potentially increasing data size.
+HTTP/2 supports server push, enabling servers to proactively send resources to the client before they're requested, unlike HTTP/1.1, where clients must explicitly request each resource.
+HTTP/2 utilizes a binary protocol, providing more efficient parsing and serialization compared to the text-based format of HTTP/1.1.
+Stream prioritization is possible in HTTP/2, allowing clients to specify the importance of resources, whereas HTTP/1.1 processes requests in the order they're received without prioritization.
+HTTP/2 typically uses a single connection per origin, reducing the need for multiple connections compared to HTTP/1.1, which may require numerous connections to fetch multiple resources in parallel.
+
+List of version HTTP:
+
+HTTP/0.9 was the initial version of the protocol, introduced in 1991 for basic hypertext transfer.
+HTTP/1.0, released in 1996, expanded functionality by introducing request headers and response status codes.
+HTTP/1.1, launched in 1997, further improved efficiency with features like persistent connections and chunked transfer encoding.
+HTTP/2, introduced in 2015, revolutionized performance with multiplexing, header compression, and server push.
+HTTP/3, the latest major version, builds upon QUIC for enhanced speed and security by using UDP instead of TCP.
+
+
+
+
+
