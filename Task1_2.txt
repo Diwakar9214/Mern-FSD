@@ -1,1 +1,89 @@
 Write a blog about objects and its internal representation in Javascript
+
+ Objects in JavaScript are collections of key-value pairs, where keys are strings (or symbols) and values can be any data type, including other objects, functions, arrays, or primitive values like strings, numbers, and booleans. This flexibility allows developers to model real-world entities and create dynamic, data-driven applications.
+
+The values are written as name:value pairs (name and value separated by a colon).
+
+Syntax:
+
+var <object-name> = {key1: value1, key2: value2,... keyN: valueN};
+
+
+Every object has some property associated with some value. These values can be accessed using the properties associated with them.
+
+let car = {
+  brand: "Toyota",
+  model: "Corolla",
+  year: 2022,
+  isElectric: false,
+  drive: function() {
+    console.log("Vroom Vroom!");
+  }
+};
+
+Here, car is an object with properties such as brand, model, year, isElectric, and a method drive()
+
+The syntax for adding a property to an object is :
+
+ObjectName.ObjectProperty = propertyValue;
+The syntax for deleting a property from an object is:
+
+delete ObjectName.ObjectProperty;
+
+The syntax to access a property from an object is:
+
+objectName.property        // Car.Make
+objectName["property”]    // Car["Make"]
+objectName[expression]   // x = "Make"; Car[x]
+
+Different way od creating object:
+
+1. Constructor Functions
+Constructor functions are a classic way to create objects in JavaScript. These functions are designed to be called with the new keyword, which creates a new object instance and binds this to that instance. Inside the constructor function, properties and methods can be assigned to the newly created object using this.
+
+javascript
+Copy code
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+let person1 = new Person("Alice", 25);
+let person2 = new Person("Bob", 30);
+2. Object.create()
+The Object.create() method allows you to create a new object with a specified prototype object. It takes an object as an argument and returns a new object that inherits from the provided object.
+
+javascript
+Copy code
+let animal = {
+  type: "Mammal",
+  sound: function() {
+    console.log("Animal sound");
+  }
+};
+
+let dog = Object.create(animal);
+dog.breed = "Labrador";
+
+console.log(dog.type); // "Mammal"
+dog.sound(); // "Animal sound"
+3. Factory Functions
+Factory functions are functions that return objects. They encapsulate the process of creating objects and allow for more flexible object creation logic.
+
+javascript
+Copy code
+function createPerson(name, age) {
+  return {
+    name: name,
+    age: age,
+    greet: function() {
+      console.log("Hello, my name is " + this.name);
+    }
+  };
+}
+
+let person1 = createPerson("Alice", 25);
+let person2 = createPerson("Bob", 30);
+
+person1.greet(); // "Hello, my name is Alice"
+person2.greet(); // "Hello, my name is Bob"
